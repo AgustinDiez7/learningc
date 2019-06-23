@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <conio.h>
+
+int main(){
+	int legajo,sueldohom,sueldomuj,sexo,acumhom,acummuj,totalhom,totalmuj,empleados,sueldohommin,sueldomujmin,sueldohommax,sueldomujmax,contmuj,conthom;
+	int bandera=1;
+	empleados=0;
+	totalhom = 0;
+	totalmuj = 0;
+	acumhom = 0;
+	acummuj = 0;
+	conthom = 0;
+	contmuj = 0;
+	while (bandera != 0){
+		sexo = 0;
+		printf("Ingrese el numero de legajo a inscribir:\n");
+		scanf("%d",&legajo);
+		while (sexo != 1 && sexo != 2) {
+			printf("Ingrese el sexo del empleado:\n");
+			scanf("%d",&sexo);
+			if (sexo == 1){
+				printf("Ingrese el sueldo del empleado:\n");
+				scanf("%d",&sueldohom);
+				acumhom = acumhom + sueldohom;
+				if (sueldohom < 400){
+					conthom++;}
+				if (empleados == 0){
+					sueldohommin = sueldohom;
+					sueldohommax = sueldohom;}
+				else if ( sueldohommax < sueldohom){
+					sueldohommax = sueldohom;}
+				else if ( sueldohommin > sueldohom){
+					sueldohommin = sueldohom;}
+				totalhom++;
+				printf("El total de hombres es de: %d\n",totalhom);
+				printf("La sumatoria de todos los sueldos de hombres es de:%d\n",acumhom);
+				printf("El menor sueldo de los hombres es: %d\ny el mayor sueldo de los hombres es de:%d\n",sueldohommin,sueldohommax);
+				printf("La cantidad de hombres que ganan menos de $300 es de: %d\n",conthom);
+				
+			}else if (sexo == 2){
+				printf("Ingrese el sueldo de la empleada:\n");
+				scanf("%d",&sueldomuj);
+				acummuj = acummuj + sueldomuj;
+				if (sueldomuj > 500){
+					contmuj++;}
+				if (empleados == 0){
+					sueldomujmin = sueldomuj;
+					sueldomujmax = sueldomuj;
+				}else if (sueldomujmax < sueldomuj){
+					sueldomujmax = sueldomuj;}
+				else if (sueldomujmin > sueldomuj){
+					sueldomujmin = sueldomuj;}
+				totalmuj++;
+				printf("El total de mujeres es de: %d\n",totalmuj);
+				printf("La sumatoria de todos los sueldos de mujeres es de: %d\n",acummuj);
+				printf("El menor sueldo de las mujeres es: %d\ny el mayor sueldo de las mujeres es de:%d\n",sueldomujmin,sueldomujmax);
+				printf("La cantidad de mujeres que ganan mas de $500 es de:%d\n",contmuj);
+				
+			}
+		}
+		printf("Desea ingresar otro empleado?\n");
+		scanf("%d",&bandera);
+	}
+	return 0;
+}
