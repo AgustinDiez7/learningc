@@ -42,7 +42,7 @@ int main() {
 				resta = a - b;
 				printf("La resta de los valores ingresados es: %d\n",resta);
 			}else{
-				printf("Los valores ingresados son invalidos, por favor asegurese que el primer valor sea mayor al segundo y que estos sean mayores que 0 e intente nuevamente.");
+				printf("Los valores ingresados son invalidos, por favor asegurese que el primer valor sea mayor al segundo y que estos sean mayores que 0 e intente nuevamente.\n");
 			}
 			break;
 		case 3:
@@ -68,7 +68,7 @@ int main() {
 				printf("Error: Los valores ingresados son menores o iguales a 0.\n");
 			}
 			break;
-		case 5: printf("Desea salir?\n");break;
+		case 5: printf("\n");break;
 		default:
 			printf("Error: valor incorrecto\n");
 			
@@ -76,6 +76,7 @@ int main() {
 		}
 	}else{
 		printf("Los valores ingresados son menores o iguales a 0, porfavor ingrese valores mayores a 0.\n");
+		scanf("%d %d",&a,&b);
 	}
 		}
 	return 0;
