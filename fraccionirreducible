@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+/*Ingresar por teclado un numero decimal comprendido entre 0,0001 y 0,9999 solamente se van a aceptar decimales de 
+hasta 4 digitos
+mostrar por pantalla la fraccion irreducible asociada a ese numero decimal ingresado (pasar numero decimal a fraccion)  */
+int main() {
+	float n;
+	int numerador;
+	int denominador;
+	
+	printf("Ingresar un numero decimal\n");
+	scanf("%f",&n);
+	if(n<0 || n>1){
+		while(n<0 || n>1){
+			printf("Error, ingrese un numero entre 0.0001 y 0.9999\n");
+			scanf("%f",&n);
+		}
+	}
+	numerador=1;
+	denominador=1/n;
+	printf("Fraccion irreducible:\n    %d\n    -    \n  %d",numerador,denominador);
+	return 0;
+}
