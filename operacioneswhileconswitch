@@ -1,0 +1,82 @@
+#include <stdio.h>
+
+int main() {
+	/* codificar un programa que permita realizar las 4 operaciones basicas 1 suma 2 resta 3 producto 4 division.
+	 para realizar los calculos se deben ingresar 2 valores naturales mayores que 0.
+	 las seleccion de las operaciones solamente se realizara si los valores ingresados son oorrectos.
+	 si se selecciona la operacion resta esta se calculara solamente si el segundo valor ingresado es mayor o igual que el primer valor ingresado
+	 el resultado de la operacion division solamente se calculara si la division es exacta y siempre sera el primer numero dividido por el segundo.*/
+	int suma,resta,multi,divison,a,b;
+	int valor;
+	printf("Ingrese dos valores\n");
+	scanf("%d %d",&a,&b);
+	while (valor != 5){
+		
+	
+	if (a > 0 && b > 0){
+		
+		
+		printf("1- Suma\n");
+		printf("2- Resta\n");
+		printf("3- Multiplicacion\n");
+		printf("4- Division\n");
+		printf("5- Salir\n");
+		
+		printf("Ingrese la operacion que quiere hacer\n");
+		
+		scanf("%d",&valor);
+		
+		
+		switch (valor) {
+		case 1:
+			if (a > 0 && b > 0) {
+				suma = a + b;
+				printf("la suma de los valores ingresados es: %d\n",suma);
+			}else{
+				printf("Los valores ingresados son menores o iguales a 0, por favor ingrese valores mayores a 0.\n");
+			}
+			break;
+		case 2:
+			
+			if ( a >= b && a > 0 && b > 0){
+				resta = a - b;
+				printf("La resta de los valores ingresados es: %d\n",resta);
+			}else{
+				printf("Los valores ingresados son invalidos, por favor asegurese que el primer valor sea mayor al segundo y que estos sean mayores que 0 e intente nuevamente.");
+			}
+			break;
+		case 3:
+			
+			if (a > 0 && b > 0) {
+				multi = a * b;
+				printf("El valor del producto es: %d\n",multi);
+			}else{
+				printf("Los valores ingresados son menores o iguales a 0, porfavor ingrese valores mayores a 0.\n");
+			}
+			break;
+		case 4:
+			
+			if (a > 0 && b > 0) {
+				
+				divison = a / b;
+				if (a / b && a % b == 0){
+					printf("La division de los valores ingresados es: %d\n",divison);
+				}else{
+					printf("Error: La division no es exacta o el primer numero no fue divido por el segundo.\n");
+				}
+			}else{
+				printf("Error: Los valores ingresados son menores o iguales a 0.\n");
+			}
+			break;
+		case 5: printf("Desea salir?\n");break;
+		default:
+			printf("Error: valor incorrecto\n");
+			
+			
+		}
+	}else{
+		printf("Los valores ingresados son menores o iguales a 0, porfavor ingrese valores mayores a 0.\n");
+	}
+		}
+	return 0;
+}
