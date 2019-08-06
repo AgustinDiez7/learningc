@@ -1,0 +1,90 @@
+package dia1;
+import java.util.Scanner;
+public class Clase1 {
+    static int i, suma = 0, n1, n2;
+
+    public static void main(String[] args) {
+        int i, suma = 0, n1, n2;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Introduce primer número: ");
+        n1 = sc.nextInt();
+        System.out.print("Introduce segundo número: ");
+        n2 = sc.nextInt();
+        amigos(n1, n2);
+        int i2, suma2 = 0, n;
+        Scanner perf = new Scanner(System.in);
+        System.out.println("Introduce un número: ");
+        n = perf.nextInt();
+        perfecto(n);
+        boolean resultado;
+        int numero;
+        System.out.println("ingrese el numero narcisista");
+        numero =  sc.nextInt();
+        resultado=esNarcisista(numero);
+        System.out.println(resultado);
+    }
+
+    static void amigos(int n1, int n2) {
+      int i=0;
+      int suma=0;
+      for (i = 1; i < n1; i++) {
+            if (n1 % i == 0) {
+                suma = suma + i;
+            }
+        }
+        if (suma == n2) {
+            suma = 0;
+            for (i = 1; i < n2; i++) {
+                if (n2 % i == 0) {
+                    suma = suma + i;
+                }
+            }
+            if (suma == n1) {
+                System.out.println("Son Amigos");
+            } else {
+                System.out.println("No son amigos");
+            }
+        } else {
+            System.out.println("No son amigos");
+        }
+
+    }
+    static void perfecto(int n) {
+        int i=0;
+        int suma=0;
+        for (i = 1; i < n; i++) {  // i son los divisores. Se divide desde 1 hasta n-1
+            if (n % i == 0) {
+                suma = suma + i;     // si es divisor se suma
+            }
+        }
+        if (suma == n) {  // si el numero es igual a la suma de sus divisores es perfecto
+            System.out.println("Perfecto");
+        } else {
+            System.out.println("No es perfecto");
+        }
+    }
+     static boolean esNarcisista(int numero){
+        String numeroComoCadena = Integer.toString(numero);
+        int longitudDeNumero = numeroComoCadena.length();
+
+        double suma = 0;
+        for(int indice = 0; indice < longitudDeNumero; indice++){
+            // Convertir carácter a entero
+            int cifra = Character.getNumericValue(numeroComoCadena.charAt(indice));
+
+        /*
+            Elevarlo al exponente dado por la longitud del número
+        */
+            double elevado = Math.pow(cifra, longitudDeNumero);
+
+            // Vamos sumando el resultado
+            suma = suma + elevado;
+        }
+        // Finalmente comprobamos si el número es igual a la suma
+        if(suma == numero){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
