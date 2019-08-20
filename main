@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String [] args){
+        int percent;
+        int id;
+        String firstname;
+        String lastname;
+        int salary;
+        Scanner s = new Scanner(System.in);
+
+
+        System.out.println("Ingrese primer nombre");
+        firstname = s.nextLine();
+
+        System.out.println("Ingrese apellido");
+        lastname = s.nextLine();
+
+        System.out.println("Ingrese id: ");
+        id = s.nextInt();
+
+        System.out.println("Ingrese salario");
+        salary = s.nextInt();
+
+        System.out.println("Ingrese aumento: ");
+        percent = s.nextInt();
+
+        Employee empleado = new Employee(id,lastname,firstname,salary);
+
+        empleado.getFirstName(firstname);
+        empleado.getLastName(lastname);
+        empleado
+
+
+
+    }
+
+}
